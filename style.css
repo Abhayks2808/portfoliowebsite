@@ -41,12 +41,8 @@ header{
     height:100vh;
     top:-100vh;
     position: fixed;
+    z-index:50;
     background-color: #1a1a1b;
-    z-index: 50;
-    border-bottom-right-radius: 100% ;
-    border-bottom-left-radius: 100%;
-    transition:all 650ms cubic-bezier(1,0,0.1);
-    overflow-x: hidden;
 }
 .navbar-nav{
     list-style: none;
@@ -55,7 +51,7 @@ header{
     display: flex;
     justify-content:center;
     align-items:center;
-    overflow-x: hidden;
+
 }
 .nav-item{
     margin:0.5rem;
@@ -76,7 +72,7 @@ background:linear-gradient(to top,#ffe434,#fb200f);
     border-radius:initial;
 }
 .menu-toggler{
-    position: absolute;
+    position: fixed;
     top:5rem;
     right:5rem;
     width:5rem;
@@ -85,8 +81,8 @@ background:linear-gradient(to top,#ffe434,#fb200f);
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index:1500;
-    transition:transform 650ms ease-out;
+    z-index:1000;
+    
 }
 .menu-toggler.open div:nth-child(1){
     transform:rotate(-45deg);
@@ -351,7 +347,27 @@ opacity: .3;
 .portfolio-description .cta:hover{
     color:#2f67cd;
 }
-/* End services */
+/* End portfolio */
+/* start resume */
+.showresume{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.showresume i{
+    font-size: 10rem;
+}
+.viewresume{
+    display: inline-block;
+    background-color:rgba(118, 41, 28, 0.925);
+    font-size: 4rem;
+    border-radius: 1rem;
+}
+.viewresume:hover{
+    background-color:#f5bb00;
+}
+/* End resume */
 /* start time-line */
 .timeline ul{
     border-left:4px solid #ffe838;
@@ -538,15 +554,13 @@ input[type="submit"]:hover{
       }
 }
 
-@media all and (max-width:620px){
+@media screen and (max-width:620px){
     body{
         overflow-x: hidden;
     }
     .menu-toggler{
-        top:2rem;
-        right:2rem;
-        width:3rem;
-        height:2rem;
+        top:8rem;
+        right:7rem;
     }
     .landing-text h2{
         font-size: 6rem;
